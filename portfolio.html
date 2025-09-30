@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --accent: #8b5cf6;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --dark-gray: #334155;
+            --success: #10b981;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--secondary);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            margin-bottom: 2rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .bakery-image {
+            background: linear-gradient(45deg, #8B4513, #D2691E);
+        }
+
+        .webnest-image {
+            background: linear-gradient(45deg, #2563eb, #8b5cf6);
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .project-category {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+
+        .project-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .visit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background 0.3s ease;
+        }
+
+        .visit-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        footer {
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-code"></i> My Projects
+            </div>
+            <div class="tagline">Explore my latest web development projects</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <h2>Featured Projects</h2>
+            <p>Here are some of my recent web projects. Click on any project card to visit the live website!</p>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Bakery Project -->
+            <div class="project-card" onclick="window.open('https://webnezt.github.io/bakery/', '_blank')">
+                <div class="project-image bakery-image">
+                    <i class="fas fa-cookie-bite"></i>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Magie's Bakery</h3>
+                    <span class="project-category">Bakery Website</span>
+                    <p class="project-description">A beautiful bakery website featuring product showcase, AI chatbot, and business information. Built with HTML, CSS, and JavaScript.</p>
+                    <div class="project-meta">
+                        <span class="project-date">Live Project</span>
+                        <button class="visit-btn">
+                            <i class="fas fa-external-link-alt"></i> Visit Site
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WebNest Project -->
+            <div class="project-card" onclick="window.open('https://webnezt.github.io/webnest-teset/', '_blank')">
+                <div class="project-image webnest-image">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">WebNest Hosting</h3>
+                    <span class="project-category">Web Hosting Service</span>
+                    <p class="project-description">Professional web hosting solutions with multiple pricing plans, feature highlights, and business-focused design. Built with modern web technologies.</p>
+                    <div class="project-meta">
+                        <span class="project-date">Live Project</span>
+                        <button class="visit-btn">
+                            <i class="fas fa-external-link-alt"></i> Visit Site
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h3>My Web Projects</h3>
+            <p>Click on any project above to explore the live websites!</p>
+            <p>&copy; 2024 My Projects. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Make sure the visit buttons also work
+        document.querySelectorAll('.visit-btn').forEach((button, index) => {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const urls = [
+                    'https://webnezt.github.io/bakery/',
+                    'https://webnezt.github.io/webnest-teset/'
+                ];
+                window.open(urls[index], '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
